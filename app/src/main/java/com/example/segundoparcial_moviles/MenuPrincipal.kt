@@ -1,19 +1,45 @@
 package com.example.segundoparcial_moviles
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_menu_principal.*
 
 class MenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
-        val paises = arrayOf( "Argentina", "Chile", "Paraguay", "Bolivia", "Peru", "Ecuador", "Brasil", "Colombia", "Venezuela", "Uruguay")
-        var habitantes = arrayOf(40_000_000, 17_000_000, 6_500_000, 10_000_000, 30_000_000, 14_000_000, 183_000_000, 44_000_000, 31_000_000, 3_500_000)
-        val adaptador1 = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, paises)
-        tv1.adapter = adaptador1
 
+        val opcion1 = opcion("Visualizar Menú", R.drawable.iconomenu)
+        val opcion2 = opcion("Mi Perfil", R.drawable.iconoperfil)
+        val opcion3 = opcion("Llamanos", R.drawable.iconotelefono)
+        val opcion4 = opcion("Escribenos por Whatsapp", R.drawable.iconowhatsapp)
+        val opcion5 = opcion("Visita Nuestra Sede", R.drawable.iconomapa)
+        val opcion6 = opcion("Siguenos en Facebook", R.drawable.iconofacebook)
+        val opcion7 = opcion("Acerca de Esta Aplicacion", R.drawable.iconoinformacion)
+
+        val listaOpciones = listOf(opcion1, opcion2, opcion3,opcion4,opcion5,opcion6,opcion7)
+
+        val adapter = opcionAdapter(this, listaOpciones)
+
+        lvMenu.adapter = adapter
+
+        var intento:Intent
+
+        lvMenu.setOnItemClickListener { parent, view, position, id ->
+            if(position==0){
+                intento = Intent(this,Informacion::class.java)
+                startActivity(intento)
+            }
+
+
+
+            //val intent = Intent(this,MainActivity::class.java)
+            //startActivity(intent)
+            Toast.makeText(this,"id=${id} o position ${position}",Toast.LENGTH_SHORT).show()
+        }
     }
 }
