@@ -30,16 +30,20 @@ class MenuPrincipal : AppCompatActivity() {
         var intento:Intent
 
         lvMenu.setOnItemClickListener { parent, view, position, id ->
-            if(position==0){
+            if(position==6){
                 intento = Intent(this,Informacion::class.java)
                 startActivity(intento)
+            }
+
+            else{
+                Toast.makeText(this,"FUNCION NO IMPLEMENTADA",Toast.LENGTH_SHORT).show()
             }
 
 
 
             //val intent = Intent(this,MainActivity::class.java)
             //startActivity(intent)
-            Toast.makeText(this,"id=${id} o position ${position}",Toast.LENGTH_SHORT).show()
+
         }
     }
 }

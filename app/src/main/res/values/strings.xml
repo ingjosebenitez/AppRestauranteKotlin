@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SegundoParcial_Moviles</string>
+    <string name="linkGitHub">
+        <a href="https://github.com/ingjosebenitez/AppRestauranteKotlin">
+            ¿Te interesa ver el codigo fuente de esta App? ojea mi repositorio EN GITHUB haciendo click aqui</a>
+    </string>
 </resources>
