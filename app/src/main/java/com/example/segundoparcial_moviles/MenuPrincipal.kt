@@ -34,6 +34,10 @@ class MenuPrincipal : AppCompatActivity() {
                 intento = Intent(this,Informacion::class.java)
                 startActivity(intento)
             }
+            else if(position==5){
+                intento = Intent(this,paginaFacebook::class.java)
+                startActivity(intento)
+            }
 
             else{
                 Toast.makeText(this,"FUNCION NO IMPLEMENTADA",Toast.LENGTH_SHORT).show()
