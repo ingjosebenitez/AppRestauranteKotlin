@@ -5,3 +5,4 @@ se deben revisar:
 - todos los archivos .kt del proyecto principal, sean para nuevos screens o clases instanciadas
 - todos los archivos .xml del proyecto principal
 - values/strings.xml
+- Manifest para los permisos
