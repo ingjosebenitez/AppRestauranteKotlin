@@ -1,11 +1,10 @@
 package com.example.segundoparcial_moviles
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu_principal.*
 
 class MenuPrincipal : AppCompatActivity() {
@@ -41,6 +40,14 @@ class MenuPrincipal : AppCompatActivity() {
             else if(position==4){
                 intento = Intent(this,MapsActivity::class.java)
                 startActivity(intento)
+            }
+            else if(position==3){
+                val sendIntent: Intent = Intent()
+                val action = sendIntent.setAction(Intent.ACTION_VIEW)
+                val urlWhatsapp : String = "whatsapp://send?phone={$573164120502}&text=quihubo, me va a mandar el pedido o no!"
+                sendIntent.setPackage("com.whatsapp")
+                sendIntent.setData(Uri.parse(urlWhatsapp))
+                startActivity(sendIntent)
             }
 
             else{
