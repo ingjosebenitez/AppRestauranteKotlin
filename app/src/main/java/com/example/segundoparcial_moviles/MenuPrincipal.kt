@@ -60,6 +60,10 @@ class MenuPrincipal : AppCompatActivity() {
                 }
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE),111)
             }
+            else if(position==1){
+                intento = Intent(this,Perfil::class.java)
+                startActivity(intento)
+            }
 
             else{
                 Toast.makeText(this,"FUNCION NO IMPLEMENTADA",Toast.LENGTH_SHORT).show()
