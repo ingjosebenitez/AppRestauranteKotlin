@@ -1,10 +1,13 @@
 package com.example.segundoparcial_moviles
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_menu_principal.*
 
 class MenuPrincipal : AppCompatActivity() {
@@ -48,6 +51,14 @@ class MenuPrincipal : AppCompatActivity() {
                 sendIntent.setPackage("com.whatsapp")
                 sendIntent.setData(Uri.parse(urlWhatsapp))
                 startActivity(sendIntent)
+            }
+            else if(position==2){
+                val intent = Intent(Intent.ACTION_CALL)
+                intent.data = Uri.parse("tel:3164120502")
+                if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+                    startActivity(intent)
+                }
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE),111)
             }
 
             else{
