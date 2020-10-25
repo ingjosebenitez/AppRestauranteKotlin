@@ -32,6 +32,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    /*
+    aqui se dice la ubicación que se desea mostrar en el mapa...
+    resulta que para crear esta actividad se elige la google maps activity
+    en vez del empty activity de siempre...
+    las coordenadas son de las uts y se sacan facilmente de google
+     */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         val zoomLevel : Float

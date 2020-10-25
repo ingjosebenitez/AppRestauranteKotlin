@@ -10,6 +10,6 @@ class Informacion : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informacion)
 
-        tvLink.setMovementMethod(LinkMovementMethod.getInstance()) //instancia el link en la activity
+        tvLink.setMovementMethod(LinkMovementMethod.getInstance()) //instancia el link en la activity, con el se puede dirigir a github
     }
 }

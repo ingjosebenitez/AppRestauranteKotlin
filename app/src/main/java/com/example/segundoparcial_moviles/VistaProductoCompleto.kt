@@ -14,13 +14,19 @@ class VistaProductoCompleto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vista_producto_completo)
-
+/*
+en esta vista se va a mostrar el producto en una sola activity,
+aqui el usuario seleccionará la cantidad que desea comprar antes
+de enviarlo al chat de whatsapp
+ */
         val bundle = intent.extras
         val tipo = bundle?.getString("tipo")
         val nombre = bundle?.getString("nombre")
         val imagen = bundle?.getInt("imagen")
         val precio = bundle?.getInt("precio")
-
+/*
+obtiene los datos que se almacenaron antes en el activity perfil
+ */
         val preferencias = getSharedPreferences("datos", Context.MODE_PRIVATE)
         val nombreUsuario = preferencias.getString("nombreUsuario", "")
         val apellidoUsuario = preferencias.getString("apellidoUsuario", "")
@@ -32,7 +38,11 @@ class VistaProductoCompleto : AppCompatActivity() {
         if (imagen != null) {
             ivProducto1.setImageResource(imagen)
         }
+/*
+crea el mensaje y lo envia a whatsapp
+con todos los datos...
 
+ */
         btnPedir.setOnClickListener {
             val numero = tvNumero1.text.toString().toInt()
             val total = numero* precio!!

@@ -19,3 +19,11 @@ class categoriaAdapter(private val mContext: Context, private val listaCategoria
         return layout
     }
 }
+
+/*
+el adaptador funciona basicamente recolectando todos los objetos
+que se quieren mostrar en el listView, manejando todo como listas...
+de aqui lo que se hace es crear un frame pequeño (item_categoria)
+y armarlo con la presentacion de nombre, imagen y otros
+para luego pegarla en el listview y ahorras tiempo de diseño
+ */

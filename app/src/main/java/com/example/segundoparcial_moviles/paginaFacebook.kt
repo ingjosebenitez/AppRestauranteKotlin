@@ -16,7 +16,10 @@ class paginaFacebook : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagina_facebook)
-
+/*
+primero se piden los permisos correspondientes para acceder a internet
+si no se dan, se cierra la app
+ */
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.INTERNET),111)
         } // se encarga de pedir los permisos si el usuario no los ha dado desde la instanación

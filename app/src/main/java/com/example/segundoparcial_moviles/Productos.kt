@@ -13,18 +13,19 @@ class Productos : AppCompatActivity() {
         val bundle = intent.extras
         val tipo = bundle?.getString("tipo")
         var intento: Intent
-        var producto1 = Producto("",R.drawable.hamburguesa1,0)
+        var producto1 = Producto("",R.drawable.hamburguesa1,0)//valores por defecto
         var producto2 = Producto("",R.drawable.hamburguesa1,0)
         var producto3 = Producto("",R.drawable.hamburguesa1,0)
 
-        if(tipo.equals("hamburguesa")){
+        if(tipo.equals("hamburguesa")){//si recibe hamburguesa de la activity anterior, muestra productos de hamburguesa en listview
             producto1 = Producto("Dos Pisos", R.drawable.hamburguesa1,5000)
             producto2 = Producto("Sencilla", R.drawable.hamburguesa2,6000)
             producto3 = Producto("CON TODA!", R.drawable.hamburguesa3,7000)
-            val listaProductos = listOf(producto1,producto2,producto3)
-            val adapter = productoAdapter(this, listaProductos)
-            lvProductos.adapter = adapter
+            val listaProductos = listOf(producto1,producto2,producto3)//enlista
+            val adapter = productoAdapter(this, listaProductos)//adapta
+            lvProductos.adapter = adapter//pone en listview
         }
+        //asi mismo para el resto
         if(tipo.equals("perro")){
             producto1 = Producto("Extendido", R.drawable.perro1,12000)
             producto2 = Producto("Monstruo", R.drawable.perro2,15000)
@@ -47,6 +48,9 @@ class Productos : AppCompatActivity() {
             val adapter = productoAdapter(this, listaProductos)
             lvProductos.adapter = adapter
         }
+
+        //aqui escucha la lista, si hay click en algun item se va a la activity VistaProductoCompleto
+        //con la toda la informacion necesaria para mostrar en pantalla
         lvProductos.setOnItemClickListener { parent, view, position, id ->
             if(position==0){
                 intento = Intent(this,VistaProductoCompleto::class.java)
