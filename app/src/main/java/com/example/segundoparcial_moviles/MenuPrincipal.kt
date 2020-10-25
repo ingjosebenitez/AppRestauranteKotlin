@@ -64,7 +64,10 @@ class MenuPrincipal : AppCompatActivity() {
                 intento = Intent(this,Perfil::class.java)
                 startActivity(intento)
             }
-
+            else if(position==0){
+                intento = Intent(this,Categorias::class.java)
+                startActivity(intento)
+            }
             else{
                 Toast.makeText(this,"FUNCION NO IMPLEMENTADA",Toast.LENGTH_SHORT).show()
             }
