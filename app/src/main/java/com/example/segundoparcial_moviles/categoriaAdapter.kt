@@ -13,7 +13,7 @@ class categoriaAdapter(private val mContext: Context, private val listaCategoria
 
         val categoria_ = listaCategorias[position]
 
-        layout.tvTituloCategoria1.text = categoria_.nombre
+        layout.tvTituloProducto1.text = categoria_.nombre
         layout.ivLogo1.setImageResource(categoria_.imagen)
 
         return layout
